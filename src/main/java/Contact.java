@@ -29,4 +29,8 @@ public class Contact{
         this.lastName = lastName;
     }
 
+    public void delete(){
+        // remove contact from contact list
+    }
+
 }
