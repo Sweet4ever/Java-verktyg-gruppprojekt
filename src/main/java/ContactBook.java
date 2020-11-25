@@ -28,4 +28,20 @@ public class ContactBook {
                     this.myContacts.get(i).getEmail());
         }
     }
+
+    public void delete(String firstName){
+        int index = findContact(firstName);
+        if(index != -1){
+            myContacts.remove(index);
+        }
+    }
+
+    public void addContact(String firstName, String lastName, String email){
+        Contact contact = new Contact(firstName, lastName, email);
+        myContacts.add(contact);
+    }
+
+    public int len(){
+        return myContacts.size();
+    }
 }
