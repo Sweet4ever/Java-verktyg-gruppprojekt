@@ -1,12 +1,17 @@
 package main.terminal;
 
+import java.util.Scanner;
+
 public class Terminal {
     //Add print menu metod och meny metod
+    static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         Welcoming_Message();
         Print_menu();
-        
+        int input = scan.nextInt();
+
+        CheckInputIsWithinRange(input);
 
     }
 
