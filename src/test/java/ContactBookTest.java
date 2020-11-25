@@ -27,5 +27,6 @@ class ContactBookTest {
         contactBook.delete("Oskar");
         assertEquals(contactBook.len(), 0);
     }
+    
 
 }

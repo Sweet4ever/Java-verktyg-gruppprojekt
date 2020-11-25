@@ -9,9 +9,4 @@ public class ContactTest {
         Contact contact = new Contact("Oskar", "Pilborg", "oskar.pilborg@mail.se");
         assertEquals(contact.getFirstName(), "Oskar");
     }
-
-    @Test
-    void removeContact(){
-        // ska läggas till
-    }
 }
