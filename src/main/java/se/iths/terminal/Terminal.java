@@ -1,5 +1,7 @@
 package se.iths.terminal;
 
+import se.iths.contact.ContactBook;
+
 import java.util.Scanner;
 
 public class Terminal {
@@ -8,10 +10,20 @@ public class Terminal {
 
     public static void main(String[] args) {
         Welcoming_Message();
-        Print_menu();
-        int input = scan.nextInt();
+        boolean exit = false;
 
-        CheckInputIsWithinRange(input);
+        while(!exit){
+            Print_menu();
+            System.out.println("Input: ");
+            int input = scan.nextInt();
+
+            if(CheckInputIsWithinRange(input)){
+                ChoiceMethod(input){
+
+                }
+            }
+
+        }
 
     }
 
@@ -21,8 +33,8 @@ public class Terminal {
                 "Enter 0: List of commands\n" +
                         "Enter 1: List of contacts\n" +
                         "Enter 2: Add contact\n"+
-                        "Enter 3: Remove contact"+
-                        "Enter 4: To search for a contact"+
+                        "Enter 3: Remove contact\n"+
+                        "Enter 4: To search for a contact\n"+
                         "Enter 5: To exit");
     }
     private static void Welcoming_Message(){
@@ -35,6 +47,17 @@ public class Terminal {
         else{
             System.out.println("Input: "+input+ " is out of bounds, please enter a valid number.");
             return false;
+        }
+    }
+
+    public void ChoiceMethod(int choice){
+        switch (choice){
+            case 0:
+                Print_menu();
+                break;
+
+            case 1:
+                
         }
     }
 }

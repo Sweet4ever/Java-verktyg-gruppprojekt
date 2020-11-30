@@ -8,7 +8,8 @@ class TerminalTest {
 
     @Test
     void checkInputIsWithinRange() {
-        int number = 6;
-        assertTrue(Terminal.CheckInputIsWithinRange(number));
-    }
+        for(int i=0; i<6; i++ ) {
+            assertTrue(Terminal.CheckInputIsWithinRange(i));
+        }
+            }
 }
