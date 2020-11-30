@@ -9,40 +9,39 @@ public class Terminal {
     //Add print menu metod och meny metod
     static Scanner scan = new Scanner(System.in);
     static ContactBook contactBook = new ContactBook();
-
+    public static boolean exit = false;
     public static void main(String[] args) {
         Welcoming_Message();
-        boolean exit = false;
+
 
         while(!exit){
             Print_menu();
             System.out.println("Input: ");
             int input = scan.nextInt();
+            scan.nextLine();
 
             if(CheckInputIsWithinRange(input)){
+                // TODO: 2020-11-30 add exception if wrong type of input is made 
                 ChoiceMethod(input);
-
-
             }
-
+            printBlankLine();
         }
 
     }
 
     private static void Print_menu(){
         System.out.println(
-                "Enter 0: List of commands\n" +
                         "Enter 1: List of contacts\n" +
                         "Enter 2: Add contact\n"+
                         "Enter 3: Remove contact\n"+
-                        "Enter 4: To search for a contact\n"+
+                        "Enter 4: To print a specific contact\n"+
                         "Enter 5: To exit");
     }
     private static void Welcoming_Message(){
         System.out.println("Welcome to Group 4's contact storage tool for all your storage needs");
     }
     public static boolean CheckInputIsWithinRange(int input){
-        if((input>=0) && (input<=5)){
+        if((input>0) && (input<=5)){
             return true;
         }
         else{
@@ -54,31 +53,28 @@ public class Terminal {
 
     public static void ChoiceMethod(int choice) {
         switch (choice) {
-            case 0:
-                Print_menu();
-                break;
-
             case 1:
                 contactBook.listContacts();
                 break;
 
             case 2:
-                //Add new contact
+                addNewContact();
                 break;
 
             case 3:
-                //Remove contact
+                removeContact();
                 break;
             case 4:
-                //Search for contact
+                printContact();
                 break;
 
             case 5:
-                //Exit
-                //Gör ChoiceMethod till boolean och sätt returnera false om case 5 körs
+                System.out.println("Exiting program");
+                exit = true;
                 break;
         }
     }
+
     public static void addNewContact(){
         System.out.println("Enter first name: ");
         String firstName = scan.nextLine();
@@ -94,5 +90,20 @@ public class Terminal {
             System.out.println("Could not add. " + firstName + " already exist.");
 
         }
+    }
+    public static void removeContact(){
+        System.out.println("Enter the first name of the contact to be removed: ");
+        String firstname = scan.nextLine();
+        contactBook.delete(firstname);
+        System.out.println("Contact: " + firstname + " successfully deleted");
+    }
+
+    public static void printContact(){
+        System.out.println("Enter the first name of the person to be printed: ");
+        String firstName = scan.nextLine();
+        contactBook.printContact(firstName);
+    }
+    private static void printBlankLine(){
+        System.out.println("                                                                                                                                ");
     }
 }
