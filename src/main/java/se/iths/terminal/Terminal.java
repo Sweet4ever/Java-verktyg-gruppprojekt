@@ -1,7 +1,8 @@
 package se.iths.terminal;
 
-import se.iths.contact.ContactBook;
 
+
+import se.iths.contact.*;
 import java.util.Scanner;
 
 public class Terminal {
@@ -28,7 +29,6 @@ public class Terminal {
 
     }
 
-
     private static void Print_menu(){
         System.out.println(
                 "Enter 0: List of commands\n" +
@@ -50,6 +50,7 @@ public class Terminal {
             return false;
         }
     }
+
 
     public static void ChoiceMethod(int choice){
         switch (choice){
@@ -76,6 +77,21 @@ public class Terminal {
                 //Exit
                 //Gör ChoiceMethod till boolean och sätt returnera false om case 5 körs
                 break;
+
+    public static void addNewContact(){
+        System.out.println("Enter first name: ");
+        String firstName = scan.nextLine();
+        System.out.println("Enter last name: ");
+        String lastName = scan.nextLine();
+        System.out.println("Enter e-mail: ");
+        String email = scan.nextLine();
+
+        Contact newContact = new Contact(firstName, lastName, email);
+        if(contactBook.addNewContact(newContact)) {
+            System.out.println("New contact added: First name: " + firstName + ", Last name: " + lastName + ", E-mail: " +email);
+        } else {
+            System.out.println("Could not add. " + firstName + " already exist.");
+
         }
     }
 }
