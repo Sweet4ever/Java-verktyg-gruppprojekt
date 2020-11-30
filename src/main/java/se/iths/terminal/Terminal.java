@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Terminal {
     //Add print menu metod och meny metod
     static Scanner scan = new Scanner(System.in);
+    static ContactBook contactBook = new ContactBook();
 
     public static void main(String[] args) {
         Welcoming_Message();
@@ -18,9 +19,9 @@ public class Terminal {
             int input = scan.nextInt();
 
             if(CheckInputIsWithinRange(input)){
-                ChoiceMethod(input){
+                ChoiceMethod(input);
 
-                }
+
             }
 
         }
@@ -50,14 +51,19 @@ public class Terminal {
         }
     }
 
-    public void ChoiceMethod(int choice){
+    public static void ChoiceMethod(int choice){
         switch (choice){
             case 0:
                 Print_menu();
                 break;
 
             case 1:
-                
+                contactBook.listContacts();
+                break;
+
+            case 2:
+                //Add new contact
+                break;
         }
     }
 }

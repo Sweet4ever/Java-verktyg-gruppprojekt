@@ -19,7 +19,7 @@ public class ContactBook {
         return -1;
     }
 
-    public  void listContacts(){
+    public void listContacts(){
         System.out.println("Kontaktlista: ");
         for(int i = 0; i < this.myContacts.size(); i++){
             System.out.println((i + 1) + ".	Förnamn: " +
