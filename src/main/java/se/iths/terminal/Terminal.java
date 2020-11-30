@@ -52,8 +52,8 @@ public class Terminal {
     }
 
 
-    public static void ChoiceMethod(int choice){
-        switch (choice){
+    public static void ChoiceMethod(int choice) {
+        switch (choice) {
             case 0:
                 Print_menu();
                 break;
@@ -77,7 +77,8 @@ public class Terminal {
                 //Exit
                 //Gör ChoiceMethod till boolean och sätt returnera false om case 5 körs
                 break;
-
+        }
+    }
     public static void addNewContact(){
         System.out.println("Enter first name: ");
         String firstName = scan.nextLine();
