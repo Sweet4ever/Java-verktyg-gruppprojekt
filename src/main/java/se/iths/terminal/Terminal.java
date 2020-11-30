@@ -64,6 +64,18 @@ public class Terminal {
             case 2:
                 //Add new contact
                 break;
+
+            case 3:
+                //Remove contact
+                break;
+            case 4:
+                //Search for contact
+                break;
+
+            case 5:
+                //Exit
+                //Gör ChoiceMethod till boolean och sätt returnera false om case 5 körs
+                break;
         }
     }
 }
