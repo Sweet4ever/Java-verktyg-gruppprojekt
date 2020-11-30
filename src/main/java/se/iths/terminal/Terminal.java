@@ -15,7 +15,6 @@ public class Terminal {
 
     }
 
-
     private static void Print_menu(){
         System.out.println(
                 "Enter 0: List of commands\n" +
@@ -37,4 +36,6 @@ public class Terminal {
             return false;
         }
     }
+
+
 }

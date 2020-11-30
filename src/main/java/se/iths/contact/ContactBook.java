@@ -9,6 +9,15 @@ public class ContactBook {
         this.myContacts = new ArrayList<Contact>();
     }
 
+    public boolean addNewContact(Contact contact) {
+        if(findContact(contact.getFirstName()) >=0) {
+            System.out.println("Kontakten är redan sparad.");
+            return false;
+        }
+        myContacts.add(contact);
+        return true;
+    }
+
     private int findContact(String contactFirstName){
         for(int i = 0; i < this.myContacts.size(); i++){
             Contact contact = this.myContacts.get(i);
@@ -19,7 +28,7 @@ public class ContactBook {
         return -1;
     }
 
-    public  void listContacts(){
+    public void listContacts(){
         System.out.println("Kontaktlista: ");
         for(int i = 0; i < this.myContacts.size(); i++){
             System.out.println((i + 1) + ".	Förnamn: " +
