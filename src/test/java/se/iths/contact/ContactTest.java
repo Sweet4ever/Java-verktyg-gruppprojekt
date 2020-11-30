@@ -3,7 +3,7 @@ package se.iths.contact;
 import org.junit.Test;
 import se.iths.contact.Contact;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ContactTest {
 
