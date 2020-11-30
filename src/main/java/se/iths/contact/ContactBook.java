@@ -30,6 +30,7 @@ public class ContactBook {
 
     public void listContacts(){
         System.out.println("Contactlist: ");
+
         for(int i = 0; i < this.myContacts.size(); i++){
             System.out.println((i + 1) + ".	First name: " +
                     this.myContacts.get(i).getFirstName() + "\n\t Last name: " +
