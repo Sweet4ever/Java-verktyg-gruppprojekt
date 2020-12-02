@@ -12,14 +12,14 @@ public class ContactBook {
     public boolean addNewContact(Contact contact) {
         try {
             if (findContact(contact.getFirstName()) >= 0) {
-                System.out.println("Kontakten är redan sparad.");
+                System.out.println("Contact already added.");
                 return false;
             }
             myContacts.add(contact);
             return true;
         }
         catch (Exception e) {
-            System.out.println("Execption addNewContact: " + e);
+            System.out.println("Exception addNewContact: " + e);
             return false;
         }
     }
@@ -32,12 +32,11 @@ public class ContactBook {
                     return i;
                 }
             }
-            return -1;
         }
         catch (Exception e) {
-            System.out.println("Execption findContact: " + e);
-            return -1;
+            System.out.println("Exception findContact: " + e);
         }
+        return -1;
     }
 
     public void listContacts(){
@@ -52,7 +51,7 @@ public class ContactBook {
             }
         }
         catch (Exception e) {
-            System.out.println("Execption listContact: " + e);
+            System.out.println("Exception listContact: " + e);
         }
     }
     public void printContact(String firstName){
@@ -64,7 +63,7 @@ public class ContactBook {
                     this.myContacts.get(indexPosition).getEmail());
         }
         catch (Exception e) {
-            System.out.println("Execption printContact: " + e);
+            System.out.println("Exception printContact: " + e);
         }
     }
 
@@ -78,7 +77,7 @@ public class ContactBook {
             }
         }
         catch (Exception e) {
-            System.out.println("Execption delete: " + e);
+            System.out.println("Exception delete: " + e);
         }
     }
 
