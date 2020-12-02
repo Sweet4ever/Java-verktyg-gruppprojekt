@@ -1,31 +1,28 @@
 package se.iths.terminal;
 
-
-
 import se.iths.contact.*;
+import se.iths.contact.ContactBook;
+
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Terminal {
     //Add print menu metod och meny metod
     static Scanner scan = new Scanner(System.in);
     static ContactBook contactBook = new ContactBook();
     public static boolean exit = false;
+
     public static void main(String[] args) {
         Welcoming_Message();
-
 
         while(!exit){
             Print_menu();
             System.out.println("Input: ");
-            int input = scan.nextInt();
-            scan.nextLine();
+            String input = scan.nextLine();
 
-            if(CheckInputIsWithinRange(input)){
-                ChoiceMethod(input);
-            }
+            ChoiceMethod(input);
             printBlankLine();
         }
-
     }
 
     private static void Print_menu(){
@@ -39,42 +36,32 @@ public class Terminal {
     private static void Welcoming_Message(){
         System.out.println("Welcome to Group 4's contact storage tool for all your storage needs");
     }
-    public static boolean CheckInputIsWithinRange(int input) {
-        try {
-            if ((input > 0) && (input <= 5)) {
-                return true;
-            } else {
-                System.out.println("Input: " + input + " is out of bounds, please enter a valid number.");
-                return false;
-            }
-        }
-        catch (Exception e){
-            System.out.println("Exception: " + e);
-            return false;
-        }
-    }
 
-    public static void ChoiceMethod(int choice) {
+    public static void ChoiceMethod(String choice) {
         try{
             switch (choice) {
-                case 1:
+                case "1":
                     contactBook.listContacts();
                     break;
 
-                case 2:
+                case "2":
                     addNewContact();
                     break;
 
-                case 3:
+                case "3":
                     removeContact();
                     break;
-                case 4:
+                case "4":
                     printContact();
                     break;
 
-                case 5:
+                case "5":
                     System.out.println("Exiting program");
                     exit = true;
+                    break;
+                default:
+                    System.out.println("Your choice does not exist.");
+                    TimeUnit.SECONDS.sleep(1);
                     break;
             }
         }

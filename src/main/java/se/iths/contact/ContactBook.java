@@ -1,4 +1,4 @@
-package se.iths.contactbook;
+package se.iths.contact;
 
 import se.iths.contact.Contact;
 
