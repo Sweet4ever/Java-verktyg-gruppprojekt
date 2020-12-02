@@ -11,7 +11,7 @@ public class ContactBook {
 
     public boolean addNewContact(Contact contact) {
         if(findContact(contact.getFirstName()) >=0) {
-            System.out.println("Kontakten är redan sparad.");
+            System.out.println("The contact is already saved.");
             return false;
         }
         myContacts.add(contact);
