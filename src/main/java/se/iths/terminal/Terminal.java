@@ -40,39 +40,49 @@ public class Terminal {
     private static void Welcoming_Message(){
         System.out.println("Welcome to Group 4's contact storage tool for all your storage needs");
     }
-    public static boolean CheckInputIsWithinRange(int input){
-        if((input>0) && (input<=5)){
-            return true;
+    public static boolean CheckInputIsWithinRange(int input) {
+        try {
+            if ((input > 0) && (input <= 5)) {
+                return true;
+            } else {
+                System.out.println("Input: " + input + " is out of bounds, please enter a valid number.");
+                return false;
+            }
         }
-        else{
-            System.out.println("Input: "+input+ " is out of bounds, please enter a valid number.");
+        catch (Exception e){
+            System.out.println("Exception: " + e);
             return false;
         }
     }
 
-
     public static void ChoiceMethod(int choice) {
-        switch (choice) {
-            case 1:
-                contactBook.listContacts();
-                break;
+        try{
+            switch (choice) {
+                case 1:
+                    contactBook.listContacts();
+                    break;
 
-            case 2:
-                addNewContact();
-                break;
+                case 2:
+                    addNewContact();
+                    break;
 
-            case 3:
-                removeContact();
-                break;
-            case 4:
-                printContact();
-                break;
+                case 3:
+                    removeContact();
+                    break;
+                case 4:
+                    printContact();
+                    break;
 
-            case 5:
-                System.out.println("Exiting program");
-                exit = true;
-                break;
+                case 5:
+                    System.out.println("Exiting program");
+                    exit = true;
+                    break;
+            }
         }
+        catch(Exception e){
+            System.out.println("Exception: " + e);
+        }
+
     }
 
     public static void addNewContact(){
