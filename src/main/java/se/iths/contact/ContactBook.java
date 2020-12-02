@@ -57,11 +57,6 @@ public class ContactBook {
         }
     }
 
-    public void addContact(String firstName, String lastName, String email){
-        Contact contact = new Contact(firstName, lastName, email);
-        myContacts.add(contact);
-    }
-
     public int len(){
         return myContacts.size();
     }
