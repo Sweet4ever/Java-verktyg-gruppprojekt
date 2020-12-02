@@ -21,7 +21,6 @@ public class Terminal {
             scan.nextLine();
 
             if(CheckInputIsWithinRange(input)){
-                // TODO: 2020-11-30 add exception if wrong type of input is made 
                 ChoiceMethod(input);
             }
             printBlankLine();

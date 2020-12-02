@@ -16,14 +16,16 @@ class ContactBookTest {
     @Test
     public void addContact(){
         ContactBook contactBook = new ContactBook();
-        contactBook.addContact("Oskar", "Pilborg", "oskar.pilborg@mail.se");
+        Contact newContact = new Contact("Oskar", "Pilborg", "oskar.pilborg@mail.se");
+        contactBook.addNewContact(newContact);
         assertEquals(contactBook.len(), 1);
     }
 
     @Test
     public void removeContact(){
         ContactBook contactBook = new ContactBook();
-        contactBook.addContact("Oskar", "Pilborg", "oskar.pilborg@mail.se");
+        Contact newContact = new Contact("Oskar", "Pilborg", "oskar.pilborg@mail.se");
+        contactBook.addNewContact(newContact);
         contactBook.delete("Oskar");
         assertEquals(contactBook.len(), 0);
     }
