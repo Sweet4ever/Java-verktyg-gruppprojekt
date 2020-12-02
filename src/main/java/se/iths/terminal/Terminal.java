@@ -52,27 +52,33 @@ public class Terminal {
 
 
     public static void ChoiceMethod(int choice) {
-        switch (choice) {
-            case 1:
-                contactBook.listContacts();
-                break;
+        try{
+            switch (choice) {
+                case 1:
+                    contactBook.listContacts();
+                    break;
 
-            case 2:
-                addNewContact();
-                break;
+                case 2:
+                    addNewContact();
+                    break;
 
-            case 3:
-                removeContact();
-                break;
-            case 4:
-                printContact();
-                break;
+                case 3:
+                    removeContact();
+                    break;
+                case 4:
+                    printContact();
+                    break;
 
-            case 5:
-                System.out.println("Exiting program");
-                exit = true;
-                break;
+                case 5:
+                    System.out.println("Exiting program");
+                    exit = true;
+                    break;
+            }
         }
+        catch(Exception e){
+            System.out.println("Exception: " + e);
+        }
+
     }
 
     public static void addNewContact(){
