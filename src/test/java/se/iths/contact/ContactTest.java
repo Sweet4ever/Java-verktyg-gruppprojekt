@@ -1,7 +1,6 @@
 package se.iths.contact;
 
-import org.junit.Test;
-import se.iths.contact.Contact;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

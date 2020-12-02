@@ -1,4 +1,6 @@
-package se.iths.contact;
+package se.iths.contactbook;
+
+import se.iths.contact.Contact;
 
 import java.util.ArrayList;
 
@@ -28,7 +30,7 @@ public class ContactBook {
         try {
             for (int i = 0; i < this.myContacts.size(); i++) {
                 Contact contact = this.myContacts.get(i);
-                if (contact.getFirstName().equals(contactFirstName)) {
+                if (contact.getFirstName().equalsIgnoreCase(contactFirstName)) {
                     return i;
                 }
             }
