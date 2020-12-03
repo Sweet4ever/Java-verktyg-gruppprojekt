@@ -49,7 +49,7 @@ public class ContactBook {
                 System.out.println((i + 1) + ".	 First name: " +
                         this.myContacts.get(i).getFirstName() + "\n\t Last name:  " +
                         this.myContacts.get(i).getLastName() + "\n\t E-mail:     " +
-                        this.myContacts.get(i).getEmail());
+                        this.myContacts.get(i).getEmail()+"\n");
             }
         }
         catch (Exception e) {
