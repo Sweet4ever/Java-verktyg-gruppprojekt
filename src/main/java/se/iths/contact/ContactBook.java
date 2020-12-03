@@ -5,7 +5,7 @@ import se.iths.contact.Contact;
 import java.util.ArrayList;
 
 public class ContactBook {
-    private ArrayList<Contact> myContacts;
+    public ArrayList<Contact> myContacts;
 
     public ContactBook(){
         this.myContacts = new ArrayList<Contact>();
