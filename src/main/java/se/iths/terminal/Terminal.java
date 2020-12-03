@@ -6,6 +6,9 @@ import se.iths.contact.ContactBook;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
 public class Terminal {
     //Add print menu metod och meny metod
     static Scanner scan = new Scanner(System.in);
