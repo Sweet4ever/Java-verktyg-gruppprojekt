@@ -3,7 +3,7 @@ package se.iths.terminal;
 import se.iths.contact.*;
 import se.iths.contact.ContactBook;
 import se.iths.writeAndRead.ReadFromFile;
-import se.iths.writeAndRead.WriteToFile;
+import se.iths.writeAndRead.WriteAndReadFromFile;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -61,7 +61,7 @@ public class Terminal {
 
                 case "5":
                     System.out.println("Exiting program");
-                    WriteToFile.writeObjectToFile(contactBook);
+                    WriteAndReadFromFile.writeObjectToFile(contactBook);
 
                     exit = true;
                     break;

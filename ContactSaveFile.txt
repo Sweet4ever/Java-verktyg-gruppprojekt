@@ -1,6 +1,3 @@
-Kennie
-Svensson
-@mail.co
-Emil
-Wennberg
-@emil.com
+Oskar
+Pilborg
+oskar.pilborg@mail.com

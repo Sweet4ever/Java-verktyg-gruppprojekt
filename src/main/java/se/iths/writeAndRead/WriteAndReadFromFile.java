@@ -6,7 +6,7 @@ import se.iths.contact.ContactBook;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
 
-public class WriteToFile {
+public class WriteAndReadFromFile {
 
     public static void writeObjectToFile(ContactBook contactBook) {
         try {
