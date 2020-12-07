@@ -2,9 +2,12 @@ package se.iths.terminal;
 
 import se.iths.contact.*;
 import se.iths.contact.ContactBook;
+import se.iths.writeAndRead.ReadFromFile;
+import se.iths.writeAndRead.WriteToFile;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+
 
 public class Terminal {
     //Add print menu metod och meny metod
@@ -14,6 +17,7 @@ public class Terminal {
 
     public static void main(String[] args) {
         Welcoming_Message();
+        contactBook = ReadFromFile.readContactFromFile();
 
         while(!exit){
             Print_menu();
@@ -57,6 +61,8 @@ public class Terminal {
 
                 case "5":
                     System.out.println("Exiting program");
+                    WriteToFile.writeObjectToFile(contactBook);
+
                     exit = true;
                     break;
                 default:
